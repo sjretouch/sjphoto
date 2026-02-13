@@ -1,272 +1,921 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JH Retouch | High-End Beauty Retouching</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Inter',sans-serif;
-  background:#fff;
-  color:#111;
-  line-height:1.6;
-}
-.container{
-  width:90%;
-  max-width:1100px;
-  margin:auto;
-}
-section{padding:100px 0}
-h1{font-size:3rem;margin-bottom:20px}
-h2{font-size:2rem;margin-bottom:20px}
-h3{margin-bottom:10px}
-p{color:#555;margin-bottom:20px}
-.center{text-align:center}
-
-/* Header */
-header{
-  position:fixed;
-  width:100%;
-  background:#fff;
-  border-bottom:1px solid #eee;
-  padding:15px 0;
-  z-index:999;
-}
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-nav a{
-  margin-left:20px;
-  text-decoration:none;
-  color:#111;
-  font-weight:500;
-}
-nav a:hover{opacity:.6}
-
-/* Button */
-.btn{
-  display:inline-block;
-  padding:14px 28px;
-  border:1px solid #111;
-  text-decoration:none;
-  color:#111;
-  transition:.3s;
-}
-.btn:hover{
-  background:#111;
-  color:#fff;
-}
-
-/* Grid */
-.grid{
-  display:grid;
-  gap:40px;
-}
-.grid-3{
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-}
-
-/* Slider */
-.slider{
-  position:relative;
-  max-width:900px;
-  margin:60px auto;
-  overflow:hidden;
-}
-.slider img{
-  width:100%;
-  display:block;
-}
-.after{
-  position:absolute;
-  top:0;
-  left:0;
-  width:50%;
-  overflow:hidden;
-}
-.handle{
-  position:absolute;
-  top:0;
-  left:50%;
-  width:2px;
-  height:100%;
-  background:#fff;
-  border-left:1px solid #000;
-  border-right:1px solid #000;
-  cursor:ew-resize;
-}
-
-/* Dark section */
-.dark{
-  background:#111;
-  color:#fff;
-}
-.dark p{color:#ccc}
-
-/* Fade animation */
-.fade{
-  opacity:0;
-  transform:translateY(40px);
-  transition:all .8s ease;
-}
-.fade.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* Footer */
-footer{
-  padding:40px 0;
-  text-align:center;
-  font-size:.9rem;
-  color:#777;
-}
-
-/* Responsive */
-@media(max-width:768px){
-  h1{font-size:2rem}
-  section{padding:70px 0}
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<div class="container">
-<nav>
-<div><strong>JH Retouch</strong></div>
-<div>
-<a href="#portfolio">Portfolio</a>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-</div>
-</header>
-
-<div style="height:70px;"></div>
-
-<!-- HERO -->
-<section class="center fade">
-<div class="container">
-<h1>High-End Beauty Retouching<br>For Professional Photographers</h1>
-<p>Natural skin. Real texture. Zero plastic look.<br>
-Manually crafted with 8+ years of experience.</p>
-<a href="#contact" class="btn">Try 1 Photo Free</a>
-</div>
-</section>
-
-<!-- PORTFOLIO -->
-<section id="portfolio" class="center fade">
-<div class="container">
-<h2>Selected Work</h2>
-
-<div class="slider">
-<img src="before1.jpg">
-<div class="after"><img src="after1.jpg"></div>
-<div class="handle"></div>
-</div>
-
-<div class="slider">
-<img src="before2.jpg">
-<div class="after"><img src="after2.jpg"></div>
-<div class="handle"></div>
-</div>
-
-</div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="fade">
-<div class="container center">
-<h2>Services & Investment</h2>
-<div class="grid grid-3">
-
-<div>
-<h3>Basic — $5</h3>
-<p>Skin cleanup<br>Minor blemish removal<br>Basic color correction</p>
-</div>
-
-<div>
-<h3>Professional — $10</h3>
-<p>Advanced dodge & burn<br>Hair cleanup<br>Professional grading</p>
-</div>
-
-<div>
-<h3>High-End — $20+</h3>
-<p>Full manual retouch<br>Texture preservation<br>Commercial finish</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- TESTIMONIAL -->
-<section class="center fade">
-<div class="container">
-<h2>What Photographers Say</h2>
-<p>"Clean skin, natural texture, fast delivery. Highly recommended."</p>
-<p>— Beauty Photographer, USA</p>
-</div>
-</section>
-
-<!-- FAQ -->
-<section class="fade">
-<div class="container center">
-<h2>FAQ</h2>
-<p><strong>Do you use AI?</strong><br>No. All retouching is done manually.</p>
-<p><strong>Turnaround time?</strong><br>24–48 hours standard delivery.</p>
-<p><strong>Revisions?</strong><br>Minor revisions included.</p>
-</div>
-</section>
-
-<!-- CTA -->
-<section id="contact" class="dark center fade">
-<div class="container">
-<h2>Let’s Elevate Your Next Shoot.</h2>
-<p>Send one image for a free test retouch.</p>
-<a href="mailto:your@email.com" class="btn">Send Me a Photo</a>
-</div>
-</section>
-
-<footer>
-© 2026 JH Retouch. All rights reserved.
-</footer>
-
-<script>
-// Fade in
-const faders=document.querySelectorAll('.fade');
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JH Retouch Studio – Professional Photo Retouching</title>
+  <style>
+    :root {
+      --primary: #111827;
+      --accent: #f97316;
+      --bg: #0b1120;
+      --light: #f9fafb;
+      --muted: #9ca3af;
     }
-  });
-},{threshold:0.2});
-faders.forEach(el=>observer.observe(el));
 
-// Slider logic
-document.querySelectorAll('.slider').forEach(slider=>{
-  const after=slider.querySelector('.after');
-  const handle=slider.querySelector('.handle');
-  slider.addEventListener('mousemove',e=>{
-    const rect=slider.getBoundingClientRect();
-    let x=e.clientX-rect.left;
-    if(x<0)x=0;
-    if(x>rect.width)x=rect.width;
-    after.style.width=x+"px";
-    handle.style.left=x+"px";
-  });
-});
-</script>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
 
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f2937, #020617 55%);
+      color: var(--light);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(15, 23, 42, 0.85);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--light);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      color: #111827;
+      font-weight: 600;
+      box-shadow: 0 12px 40px rgba(248, 113, 113, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 60px rgba(248, 113, 113, 0.55);
+    }
+
+    .btn-outline {
+      border-color: rgba(148, 163, 184, 0.5);
+      color: var(--light);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: rgba(148, 163, 184, 0.1);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 4rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 4vw, 3.3rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      color: var(--muted);
+      max-width: 30rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .hero-meta span strong {
+      color: var(--light);
+      font-size: 1.05rem;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, rgba(248, 113, 113, 0.16), #020617);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      box-shadow: 0 24px 80px rgba(15, 23, 42, 0.8);
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .ba-item {
+      border-radius: 1rem;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+    }
+
+    .ba-label {
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
+
+    .hero-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .dot-pulse {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .dot-pulse span {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.3);
+    }
+
+    /* Section generic */
+    section {
+      padding: 3rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 32rem;
+      margin: 0 auto;
+      font-size: 0.95rem;
+    }
+
+    /* Services */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 1.25rem;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      padding: 1.4rem;
+      font-size: 0.95rem;
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      padding: 0.18rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-right: 0.25rem;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Portfolio */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .portfolio-item {
+      border-radius: 1.1rem;
+      overflow: hidden;
+      position: relative;
+      background: #020617;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      aspect-ratio: 4 / 5;
+    }
+
+    .portfolio-badge {
+      position: absolute;
+      bottom: 0.6rem;
+      left: 0.6rem;
+      right: 0.6rem;
+      padding: 0.4rem 0.6rem;
+      border-radius: 0.9rem;
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .pricing-card {
+      background: radial-gradient(circle at top, rgba(248, 113, 113, 0.18), #020617);
+      border-radius: 1.4rem;
+      border: 1px solid rgba(248, 113, 113, 0.4);
+      padding: 1.6rem;
+    }
+
+    .pricing-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .price {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 0.6rem 0;
+    }
+
+    .price span {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .pricing-card ul,
+    .card ul {
+      list-style: none;
+      margin: 0.75rem 0 1.1rem;
+      padding-left: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .pricing-card ul li,
+    .card ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .testimonials-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .testimonial-item {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 1.1rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 1rem 1.1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .testimonial-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .stars {
+      font-size: 0.8rem;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    form {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+      display: block;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border-radius: 0.8rem;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 0.6rem 0.8rem;
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--light);
+      font-family: inherit;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.3);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .contact-meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .contact-meta strong {
+      color: var(--light);
+    }
+
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.3);
+      padding: 1.5rem 0 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Floating Instagram button */
+    .floating-instagram {
+      position: fixed;
+      right: 1.5rem;
+      bottom: 1.5rem;
+      z-index: 100;
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 30% 30%, #f97316, #ec4899, #8b5cf6);
+      color: #f9fafb;
+      text-decoration: none;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.8);
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+    }
+
+    .floating-instagram:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 22px 60px rgba(15, 23, 42, 0.95);
+      opacity: 0.95;
+    }
+
+    .floating-instagram svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero-grid,
+      .testimonials,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .grid-3,
+      .portfolio-grid,
+      .pricing-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-title {
+        font-size: 2.1rem;
+      }
+
+      section {
+        padding: 2.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">
+          <div class="logo-mark">JH</div>
+          <span>JH Retouch Studio</span>
+        </div>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact" class="btn btn-primary">Get a quote</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-eyebrow">Professional photo retouching for photographers & studios</div>
+          <h1 class="hero-title">
+            Turn your <span>RAW files</span><br />
+            into commercial-ready images.
+          </h1>
+          <p class="hero-subtitle">
+            High-end beauty, fashion and e-commerce retouching. Natural skin, clean details, consistent color – ready for printing and social media.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Send images for a free sample</a>
+            <a href="#portfolio" class="btn btn-outline">View before &amp; after</a>
+          </div>
+          <div class="hero-meta">
+            <span><strong>48h</strong> average turnaround time</span>
+            <span><strong>8+</strong> years of experience</span>
+            <span><strong>100%</strong> file confidentiality</span>
+          </div>
+        </div>
+        <div>
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <span>Before / After preview</span>
+              <span class="dot-pulse"><span></span> Available</span>
+            </div>
+            <div class="before-after">
+              <div class="ba-item">
+                <div class="ba-label">Before</div>
+                <!-- Replace with your own "before" image -->
+                <img src="https://github.com/JHretouch/Jhretouch/blob/main/connor-wilkins-2crxTr4jCkc-unsplash%202.jpg?raw=true" alt="Before" />
+              </div>
+              <div class="ba-item">
+                <div class="ba-label">After</div>
+                <!-- Replace with your own "after" image -->
+                <img src="https://github.com/JHretouch/Jhretouch/blob/main/connor-wilkins-2crxTr4jCkc-unsplash.jpg?raw=true" alt="After" />
+              </div>
+            </div>
+            <div class="hero-card-footer">
+              <span>Send 1–3 images to get a free retouch sample.</span>
+              <span>RAW or JPEG is fine.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Services</div>
+        <h2 class="section-title">What I can help you with</h2>
+        <p class="section-subtitle">
+          Tailored for freelance photographers, studios and brands who need consistent, professional retouching.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Beauty & Portrait</h3>
+          <p>
+            Natural-looking skin retouch, preserving texture, cleaning up details, enhancing eyes, lips and hair while keeping the original mood.
+          </p>
+          <div>
+            <span class="pill">Skin retouch</span>
+            <span class="pill">Dodge &amp; Burn</span>
+            <span class="pill">Clean up</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Fashion & Editorial</h3>
+          <p>
+            Color-consistent sets, shape & clothing fixes, refined details for campaigns, lookbooks and social media content.
+          </p>
+          <div>
+            <span class="pill">Color grading</span>
+            <span class="pill">Wardrobe cleanup</span>
+            <span class="pill">Editorial sets</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Product & E-commerce</h3>
+          <p>
+            Clean background, remove dust & scratches, highlight product features and prepare files for marketplaces & ads.
+          </p>
+          <div>
+            <span class="pill">Packshot</span>
+            <span class="pill">Clean background</span>
+            <span class="pill">Color accuracy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Portfolio</div>
+        <h2 class="section-title">Selected work examples</h2>
+        <p class="section-subtitle">
+          Replace these placeholders with your real projects – each tile can represent a different client or photoshoot.
+        </p>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="https://images.pexels.com/photos/3760853/pexels-photo-3760853.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Beauty" />
+          <div class="portfolio-badge">
+            <span>Beauty campaign</span>
+            <span>2000+ images</span>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://github.com/JHretouch/Jhretouch/blob/main/IMG_7940.jpg?raw=true" alt="Fashion" />
+          <div class="portfolio-badge">
+            <span>Fashion lookbook</span>
+            <span>8000+ images</span>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&w=600" alt="E-commerce" />
+          <div class="portfolio-badge">
+            <span>E-commerce products</span>
+            <span>3000+ images</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Pricing</div>
+        <h2 class="section-title">Simple & transparent rates</h2>
+        <p class="section-subtitle">
+          Prices are per image and may vary slightly depending on complexity. For large projects, contact me for a custom quote.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Basic -->
+        <div class="card">
+          <h3>Basic Retouch</h3>
+          <div class="price">$2<span> / image</span></div>
+          <ul>
+            <li>Light skin cleanup</li>
+            <li>Basic color & exposure correction</li>
+            <li>Suitable for simple portraits & everyday shots</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Choose Basic</a>
+        </div>
+
+        <!-- Model / Standard -->
+        <div class="pricing-card">
+          <h3>Model / Standard</h3>
+          <div class="price">$4<span> / image</span></div>
+          <ul>
+            <li>More detailed skin & feature retouching</li>
+            <li>Color grading based on your reference / mood</li>
+            <li>Perfect for beauty, fashion & social media content</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Most popular</a>
+        </div>
+
+        <!-- High-End -->
+        <div class="card">
+          <h3>High-End Beauty</h3>
+          <div class="price">$7<span> / image</span></div>
+          <ul>
+            <li>High-end skin retouch (micro details, texture preserved)</li>
+            <li>Advanced cleanup & local corrections</li>
+            <li>Ideal for campaigns, editorials & print</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Book High-End</a>
+        </div>
+      </div>
+
+      <div class="section-subtitle" style="margin-top: 1.75rem; text-align: left; max-width: 640px;">
+        <strong>Extra fees:</strong><br />
+        • More than 2 people in one image: additional charge per extra person (depending on level of retouch).<br />
+        • Compositing, adding/removing objects or special effects: <strong>+$5 – $15</strong> per image, depending on complexity.
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section>
+    <div class="container">
+      <div class="testimonials">
+        <div>
+          <div class="section-eyebrow">Feedback</div>
+          <h2 class="section-title">What clients say</h2>
+          <p class="section-subtitle" style="margin: 0;">
+            Photographers and studios who work with me long-term appreciate consistent quality, flexible communication and reliable deadlines.
+          </p>
+        </div>
+        <div class="testimonials-list">
+          <div class="testimonial-item">
+            “I send dozens of images every month with tight deadlines. The files are always delivered on time and match the color and mood I want.”
+            <div class="testimonial-footer">
+              <span><strong>Nam P.</strong> – Photographer</span>
+              <span class="stars">★★★★★</span>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            “The retouching is very clean – even at 100% zoom the skin still looks natural and detailed. Perfect for printing.”
+            <div class="testimonial-footer">
+              <span><strong>Hoa Studio</strong> – Studio owner</span>
+              <span class="stars">★★★★★</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Contact</div>
+        <h2 class="section-title">Send your images & get a quote</h2>
+        <p class="section-subtitle">
+          Tell me about your project and how many images you have. I’ll reply with a clear quote and turnaround time.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <form action="https://formspree.io/f/mvgeggbv" method="POST">
+          <div>
+            <label for="name">Your name</label>
+            <input
+              id="name"
+              type="text"
+              name="client_name"
+              placeholder="Eg: John Doe"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="email">Email / WhatsApp</label>
+            <input
+              id="email"
+              type="text"
+              name="contact"
+              placeholder="Your email or WhatsApp number"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="type">Photo type</label>
+            <input
+              id="type"
+              type="text"
+              name="photo_type"
+              placeholder="Beauty, Fashion, Product..."
+            />
+          </div>
+
+          <div>
+            <label for="imageLink">Image link</label>
+            <input
+              id="imageLink"
+              type="url"
+              name="image_link"
+              placeholder="Google Drive / Dropbox / WeTransfer link..."
+            />
+          </div>
+
+          <div>
+            <label for="message">Project details</label>
+            <textarea
+              id="message"
+              name="project_details"
+              placeholder="Number of images, deadline, retouch level (Basic / Model / High-End)..."
+            ></textarea>
+          </div>
+
+          <input type="hidden" name="_subject" value="New retouch request from landing page" />
+
+          <button class="btn btn-primary" type="submit">Send request</button>
+        </form>
+
+        <div class="contact-meta">
+          <p><strong>Direct contact:</strong></p>
+          <p>Email: <a href="mailto:jun.retouch@gmail.com">jun.retouch@gmail.com</a></p>
+          <p>Instagram: <a href="https://www.instagram.com/jh_retoucher/" target="_blank" rel="noopener">@jh_retoucher</a></p>
+          <p><strong>Working hours:</strong> usually reply within a few working hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span>© 2025 JH Retouch Studio – All rights reserved.</span>
+        <span>Made by JH Retoucher</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Instagram Button -->
+  <a
+    href="https://www.instagram.com/jh_retoucher/"
+    class="floating-instagram"
+    target="_blank"
+    rel="noopener"
+    aria-label="Open Instagram profile"
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+      <circle cx="12" cy="12" r="4"></circle>
+      <circle cx="17" cy="7" r="1.2"></circle>
+    </svg>
+  </a>
 </body>
 </html>
+
