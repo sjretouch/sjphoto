@@ -13,6 +13,7 @@
   --text:#f9fafb;
   --muted:#9ca3af;
 }
+
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
@@ -21,10 +22,13 @@ body{
   color:var(--text);
   line-height:1.6;
 }
+
 .container{width:min(1100px,90%);margin:auto}
-section{padding:90px 0}
+section{padding:80px 0}
+
 h1,h2,h3{line-height:1.2}
 p{color:var(--muted)}
+
 .btn{
   display:inline-block;
   padding:12px 22px;
@@ -60,27 +64,44 @@ nav a{color:var(--muted);text-decoration:none;margin-left:25px}
 nav a:hover{color:#fff}
 
 /* Hero */
-.hero{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.hero h1{font-size:44px;margin-bottom:20px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.hero h1{font-size:42px;margin-bottom:20px}
 .hero span{color:var(--accent)}
 .hero .cta{margin-top:25px}
 
 /* Before After Slider */
-.slider{position:relative;border-radius:20px;overflow:hidden}
-.slider img{width:100%;display:block}
+.slider{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  border-radius:20px;
+}
+.slider img{
+  width:100%;
+  display:block;
+}
 .slider .after{
-  position:absolute;top:0;left:0;width:50%;overflow:hidden
+  position:absolute;top:0;left:0;
+  width:50%;
+  overflow:hidden;
 }
 .slider input{
-  position:absolute;width:100%;height:100%;opacity:0;cursor:ew-resize
+  position:absolute;
+  width:100%;
+  height:100%;
+  opacity:0;
+  cursor:ew-resize;
 }
 .slider .line{
-  position:absolute;top:0;left:50%;width:3px;height:100%;
-  background:var(--accent)
+  position:absolute;
+  top:0;left:50%;
+  width:3px;
+  height:100%;
+  background:var(--accent);
 }
 
-/* Grid */
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+/* Services */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
 .card{
   background:var(--card);
   padding:30px;
@@ -88,213 +109,4 @@ nav a:hover{color:#fff}
   border:1px solid rgba(255,255,255,.05);
   transition:.3s;
 }
-.card:hover{transform:translateY(-6px)}
-
-.center{text-align:center}
-.price{font-size:32px;margin:15px 0}
-
-/* FAQ */
-.faq-item{
-  border-bottom:1px solid rgba(255,255,255,.1);
-  padding:20px 0;
-}
-.faq-question{
-  cursor:pointer;
-  font-weight:600;
-}
-.faq-answer{
-  max-height:0;
-  overflow:hidden;
-  transition:.4s ease;
-  color:var(--muted);
-}
-.faq-item.active .faq-answer{
-  max-height:200px;
-  margin-top:10px;
-}
-
-/* Fade animation */
-.fade{opacity:0;transform:translateY(30px);transition:1s ease}
-.fade.show{opacity:1;transform:translateY(0)}
-
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr}
-  .grid-3{grid-template-columns:1fr}
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<div class="container">
-<nav>
-<div><strong>JH Retouch</strong></div>
-<div>
-<a href="#services">Services</a>
-<a href="#why">Why Me</a>
-<a href="#pricing">Pricing</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-</div>
-</header>
-
-<!-- HERO -->
-<section class="container hero fade">
-<div>
-<h1>Turn your <span>RAW files</span> into commercial-ready images.</h1>
-<p>High-end beauty, fashion & product retouching with natural skin texture and premium finish.</p>
-<div class="cta">
-<a href="#contact" class="btn btn-primary">Get Free Sample</a>
-<a href="#services" class="btn btn-outline">View Services</a>
-</div>
-</div>
-
-<div class="slider">
-<img src="before.jpg">
-<div class="after">
-<img src="after.jpg">
-</div>
-<div class="line"></div>
-<input type="range" min="0" max="100" value="50">
-</div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="container fade center">
-<h2 style="margin-bottom:50px">Services</h2>
-<div class="grid-3">
-<div class="card">
-<h3>Beauty Retouch</h3>
-<p>High-end dodge & burn, natural skin, micro-detail preservation.</p>
-</div>
-<div class="card">
-<h3>Fashion & Editorial</h3>
-<p>Campaign-ready images with consistent color grading.</p>
-</div>
-<div class="card">
-<h3>E-commerce</h3>
-<p>Clean product presentation & accurate color correction.</p>
-</div>
-</div>
-</section>
-
-<!-- WHY WORK WITH ME -->
-<section id="why" class="container fade center">
-<h2 style="margin-bottom:50px">Why Work With Me</h2>
-<div class="grid-3">
-<div class="card">
-<h3>Manual High-End Retouch</h3>
-<p>No AI shortcuts. Every image is carefully refined by hand.</p>
-</div>
-<div class="card">
-<h3>Fast Turnaround</h3>
-<p>Most projects delivered within 24–48 hours.</p>
-</div>
-<div class="card">
-<h3>Direct 1:1 Communication</h3>
-<p>You work directly with me. No outsourcing, no quality drop.</p>
-</div>
-</div>
-</section>
-
-<!-- PROCESS -->
-<section class="container fade center">
-<h2 style="margin-bottom:50px">Simple 3-Step Process</h2>
-<div class="grid-3">
-<div class="card">
-<h3>1. Send Files</h3>
-<p>Upload RAW or JPEG via Drive, Dropbox or WeTransfer.</p>
-</div>
-<div class="card">
-<h3>2. Retouching</h3>
-<p>I carefully retouch following your mood & reference.</p>
-</div>
-<div class="card">
-<h3>3. Delivery</h3>
-<p>Receive high-resolution files ready for print or web.</p>
-</div>
-</div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing" class="container fade center">
-<h2 style="margin-bottom:50px">Pricing</h2>
-<div class="grid-3">
-<div class="card">
-<h3>Basic</h3>
-<div class="price">$2 / image</div>
-<a href="#contact" class="btn btn-outline">Choose</a>
-</div>
-<div class="card" style="border:1px solid var(--accent)">
-<h3>Standard</h3>
-<div class="price">$4 / image</div>
-<a href="#contact" class="btn btn-primary">Most Popular</a>
-</div>
-<div class="card">
-<h3>High-End</h3>
-<div class="price">$7 / image</div>
-<a href="#contact" class="btn btn-outline">Choose</a>
-</div>
-</div>
-</section>
-
-<!-- FAQ -->
-<section class="container fade">
-<h2 class="center" style="margin-bottom:40px">Frequently Asked Questions</h2>
-
-<div class="faq-item">
-<div class="faq-question">How long is the turnaround time?</div>
-<div class="faq-answer">Usually 24–48 hours depending on complexity and quantity.</div>
-</div>
-
-<div class="faq-item">
-<div class="faq-question">Do you use AI for retouching?</div>
-<div class="faq-answer">No. All retouching is done manually to ensure natural texture.</div>
-</div>
-
-<div class="faq-item">
-<div class="faq-question">Can I request revisions?</div>
-<div class="faq-answer">Yes. Minor revisions are included to make sure you are satisfied.</div>
-</div>
-
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="container fade center">
-<h2>Send Your Images & Get a Free Sample</h2>
-<p style="margin:20px 0">Email: jun.retouch@gmail.com</p>
-<a href="mailto:jun.retouch@gmail.com" class="btn btn-primary">Contact Now</a>
-</section>
-
-<script>
-/* Fade-in */
-const faders=document.querySelectorAll(".fade");
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){entry.target.classList.add("show")}
-});
-});
-faders.forEach(el=>observer.observe(el));
-
-/* Slider */
-const slider=document.querySelector(".slider");
-const range=slider.querySelector("input");
-const after=slider.querySelector(".after");
-const line=slider.querySelector(".line");
-range.addEventListener("input",()=>{
-after.style.width=range.value+"%";
-line.style.left=range.value+"%";
-});
-
-/* FAQ toggle */
-document.querySelectorAll(".faq-question").forEach(q=>{
-q.addEventListener("click",()=>{
-q.parentElement.classList.toggle("active");
-});
-});
-</script>
-
-</body>
-</html>
+.card:
