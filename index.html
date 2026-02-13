@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JH Retouch | High-End Beauty Retouching</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:'Inter',sans-serif;
+    background:#fff;
+    color:#111;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+section{
+    padding:100px 0;
+}
+h1{
+    font-size:3rem;
+    font-weight:700;
+    margin-bottom:20px;
+}
+h2{
+    font-size:2rem;
+    margin-bottom:20px;
+}
+p{
+    color:#555;
+    margin-bottom:20px;
+}
+.center{text-align:center}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    border:1px solid #111;
+    text-decoration:none;
+    color:#111;
+    margin:10px 10px 0 0;
+    transition:.3s;
+}
+.btn:hover{
+    background:#111;
+    color:#fff;
+}
+
+.dark{
+    background:#111;
+    color:#fff;
+}
+.dark p{color:#ccc}
+
+/* GRID */
+.grid{
+    display:grid;
+    gap:40px;
+}
+.grid-3{
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+}
+
+/* BEFORE AFTER SLIDER */
+.slider{
+    position:relative;
+    max-width:800px;
+    margin:60px auto;
+    overflow:hidden;
+}
+.slider img{
+    width:100%;
+    display:block;
+}
+.after{
+    position:absolute;
+    top:0;
+    left:0;
+    width:50%;
+    overflow:hidden;
+}
+.handle{
+    position:absolute;
+    top:0;
+    left:50%;
+    width:2px;
+    height:100%;
+    background:#fff;
+    border-left:1px solid #000;
+    border-right:1px solid #000;
+    cursor:ew-resize;
+}
+
+/* Fade-in animation */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+footer{
+    padding:40px 0;
+    text-align:center;
+    font-size:.9rem;
+    color:#777;
+}
+
+@media(max-width:768px){
+    h1{font-size:2rem}
+    section{padding:70px 0}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="center fade">
+<div class="container">
+<h1>High-End Beauty Retouching<br>For Professional Photographers</h1>
+<p>Natural skin. Real texture. Zero plastic look.<br>
+Handcrafted with 8+ years of professional experience.</p>
+<a href="#contact" class="btn">Try 1 Photo Free</a>
+<a href="#portfolio" class="btn">View Portfolio</a>
+</div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="center fade">
+<div class="container">
+<h2>Trusted by Photographers Worldwide</h2>
+<p>Consistent high-end skin retouching with fast turnaround and reliable communication.</p>
+</div>
+</section>
+
+<!-- BEFORE AFTER -->
+<section id="portfolio" class="center fade">
+<div class="container">
+<h2>Real Skin. Real Detail.</h2>
+
+<div class="slider" id="slider">
+<img src="before.jpg" alt="Before">
+<div class="after" id="after">
+<img src="after.jpg" alt="After">
+</div>
+<div class="handle" id="handle"></div>
+</div>
+
+<p>Manual dodge & burn. Texture preserved. No plastic blur.</p>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="fade">
+<div class="container center">
+<h2>Services & Investment</h2>
+<div class="grid grid-3">
+
+<div>
+<h3>Basic — $5</h3>
+<p>
+Skin cleanup<br>
+Minor blemish removal<br>
+Basic color correction<br>
+24–48h delivery
+</p>
+</div>
+
+<div>
+<h3>Professional — $10</h3>
+<p>
+Advanced dodge & burn<br>
+Detailed skin refinement<br>
+Hair cleanup<br>
+Professional color grading
+</p>
+</div>
+
+<div>
+<h3>High-End — $20+</h3>
+<p>
+Full manual dodge & burn<br>
+Texture preservation<br>
+Advanced grading<br>
+Commercial-quality finish
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- WORKFLOW -->
+<section class="center fade">
+<div class="container">
+<h2>Simple & Professional Workflow</h2>
+<p>
+1. Send RAW files via Google Drive.<br>
+2. Receive preview or quote.<br>
+3. Confirm & pay via PayPal.<br>
+4. Receive final high-resolution images.
+</p>
+<p>Standard delivery: 24–48 hours.</p>
+</div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="contact" class="dark center fade">
+<div class="container">
+<h2>Let’s Elevate Your Next Shoot.</h2>
+<p>Send one image for a free test retouch.<br>No watermark. No obligation.</p>
+<a href="mailto:your@email.com" class="btn">Send Me a Photo</a>
+</div>
+</section>
+
+<footer>
+© 2026 JH Retouch. All rights reserved.
+</footer>
+
+<script>
+// BEFORE AFTER SLIDER
+const slider = document.getElementById('slider');
+const after = document.getElementById('after');
+const handle = document.getElementById('handle');
+
+slider.addEventListener('mousemove', function(e){
+    const rect = slider.getBoundingClientRect();
+    let x = e.clientX - rect.left;
+    if(x<0) x=0;
+    if(x>rect.width) x=rect.width;
+    after.style.width = x + "px";
+    handle.style.left = x + "px";
+});
+
+// Fade in on scroll
+const faders = document.querySelectorAll('.fade');
+const appearOptions = {threshold:0.2};
+
+const appearOnScroll = new IntersectionObserver(function(entries,observer){
+    entries.forEach(entry=>{
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+    });
+}, appearOptions);
+
+faders.forEach(fader=>{
+    appearOnScroll.observe(fader);
+});
+</script>
+
+</body>
+</html>
