@@ -109,4 +109,152 @@ nav a:hover{color:#fff}
   border:1px solid rgba(255,255,255,.05);
   transition:.3s;
 }
-.card:
+.card:hover{transform:translateY(-5px)}
+
+/* Pricing */
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.price-card{
+  background:var(--card);
+  padding:35px;
+  border-radius:20px;
+  text-align:center;
+}
+.price{font-size:32px;margin:15px 0}
+
+/* Contact */
+.contact-box{
+  background:var(--card);
+  padding:40px;
+  border-radius:20px;
+  text-align:center;
+}
+
+/* Fade-in animation */
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s ease;
+}
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .services,.pricing{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<nav>
+<div><strong>JH Retouch</strong></div>
+<div>
+<a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</div>
+</header>
+
+<section class="container hero fade">
+<div>
+<h1>Turn your <span>RAW files</span> into commercial-ready images.</h1>
+<p>High-end beauty, fashion & product retouching with natural skin and premium finish.</p>
+<div class="cta">
+<a href="#contact" class="btn btn-primary">Get Free Sample</a>
+<a href="#services" class="btn btn-outline">View Services</a>
+</div>
+</div>
+
+<div class="slider">
+<img src="before.jpg" alt="before">
+<div class="after">
+<img src="after.jpg" alt="after">
+</div>
+<div class="line"></div>
+<input type="range" min="0" max="100" value="50">
+</div>
+
+</section>
+
+<section id="services" class="container fade">
+<h2 style="text-align:center;margin-bottom:40px">Services</h2>
+<div class="services">
+<div class="card">
+<h3>Beauty Retouch</h3>
+<p>High-end skin retouch preserving texture & details.</p>
+</div>
+<div class="card">
+<h3>Fashion & Editorial</h3>
+<p>Color-consistent sets & campaign-ready images.</p>
+</div>
+<div class="card">
+<h3>E-commerce</h3>
+<p>Clean background, product highlight & color accuracy.</p>
+</div>
+</div>
+</section>
+
+<section id="pricing" class="container fade">
+<h2 style="text-align:center;margin-bottom:40px">Pricing</h2>
+<div class="pricing">
+<div class="price-card">
+<h3>Basic</h3>
+<div class="price">$2 / image</div>
+<a href="#contact" class="btn btn-outline">Choose</a>
+</div>
+<div class="price-card" style="border:1px solid var(--accent)">
+<h3>Standard</h3>
+<div class="price">$4 / image</div>
+<a href="#contact" class="btn btn-primary">Most Popular</a>
+</div>
+<div class="price-card">
+<h3>High-End</h3>
+<div class="price">$7 / image</div>
+<a href="#contact" class="btn btn-outline">Choose</a>
+</div>
+</div>
+</section>
+
+<section id="contact" class="container fade">
+<div class="contact-box">
+<h2>Send your images & get a quote</h2>
+<p>Email: jun.retouch@gmail.com</p>
+<p>Instagram: @jh_retoucher</p>
+<a href="mailto:jun.retouch@gmail.com" class="btn btn-primary">Send Email</a>
+</div>
+</section>
+
+<script>
+/* Fade-in */
+const faders=document.querySelectorAll(".fade");
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+faders.forEach(el=>observer.observe(el));
+
+/* Before After Slider */
+const slider=document.querySelector(".slider");
+const range=slider.querySelector("input");
+const after=slider.querySelector(".after");
+const line=slider.querySelector(".line");
+
+range.addEventListener("input",()=>{
+after.style.width=range.value+"%";
+line.style.left=range.value+"%";
+});
+</script>
+
+</body>
+</html>
