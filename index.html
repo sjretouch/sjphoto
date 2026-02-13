@@ -7,201 +7,231 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:#fff;
+  color:#111;
+  line-height:1.6;
+}
+.container{
+  width:90%;
+  max-width:1100px;
+  margin:auto;
+}
+section{padding:100px 0}
+h1{font-size:3rem;margin-bottom:20px}
+h2{font-size:2rem;margin-bottom:20px}
+h3{margin-bottom:10px}
+p{color:#555;margin-bottom:20px}
+.center{text-align:center}
+
+/* Header */
+header{
+  position:fixed;
+  width:100%;
+  background:#fff;
+  border-bottom:1px solid #eee;
+  padding:15px 0;
+  z-index:999;
+}
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:#111;
+  font-weight:500;
+}
+nav a:hover{opacity:.6}
+
+/* Button */
+.btn{
+  display:inline-block;
+  padding:14px 28px;
+  border:1px solid #111;
+  text-decoration:none;
+  color:#111;
+  transition:.3s;
+}
+.btn:hover{
+  background:#111;
+  color:#fff;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    color: #111;
-    background: #ffffff;
-    line-height: 1.6;
+/* Grid */
+.grid{
+  display:grid;
+  gap:40px;
+}
+.grid-3{
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 }
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
+/* Slider */
+.slider{
+  position:relative;
+  max-width:900px;
+  margin:60px auto;
+  overflow:hidden;
+}
+.slider img{
+  width:100%;
+  display:block;
+}
+.after{
+  position:absolute;
+  top:0;
+  left:0;
+  width:50%;
+  overflow:hidden;
+}
+.handle{
+  position:absolute;
+  top:0;
+  left:50%;
+  width:2px;
+  height:100%;
+  background:#fff;
+  border-left:1px solid #000;
+  border-right:1px solid #000;
+  cursor:ew-resize;
 }
 
-section {
-    padding: 100px 0;
+/* Dark section */
+.dark{
+  background:#111;
+  color:#fff;
+}
+.dark p{color:#ccc}
+
+/* Fade animation */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s ease;
+}
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
-h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 20px;
+/* Footer */
+footer{
+  padding:40px 0;
+  text-align:center;
+  font-size:.9rem;
+  color:#777;
 }
 
-h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 14px 28px;
-    border: 1px solid #111;
-    text-decoration: none;
-    color: #111;
-    margin-right: 15px;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #111;
-    color: #fff;
-}
-
-.center {
-    text-align: center;
-}
-
-.grid {
-    display: grid;
-    gap: 40px;
-}
-
-.grid-3 {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.dark {
-    background: #111;
-    color: #fff;
-}
-
-.dark p {
-    color: #ccc;
-}
-
-footer {
-    padding: 40px 0;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #777;
+/* Responsive */
+@media(max-width:768px){
+  h1{font-size:2rem}
+  section{padding:70px 0}
 }
 </style>
 </head>
 
 <body>
 
+<header>
+<div class="container">
+<nav>
+<div><strong>JH Retouch</strong></div>
+<div>
+<a href="#portfolio">Portfolio</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</div>
+</header>
+
+<div style="height:70px;"></div>
+
 <!-- HERO -->
-<section class="center">
+<section class="center fade">
 <div class="container">
 <h1>High-End Beauty Retouching<br>For Professional Photographers</h1>
 <p>Natural skin. Real texture. Zero plastic look.<br>
-Handcrafted retouching with 8+ years of experience.</p>
-
-<a href="mailto:your@email.com" class="btn">Try 1 Photo Free</a>
-<a href="#portfolio" class="btn">View Portfolio</a>
-</div>
-</section>
-
-<!-- ABOUT -->
-<section>
-<div class="container center">
-<h2>Not an Agency. Your Personal Retoucher.</h2>
-<p>
-Hi, I’m JH — a professional freelance retoucher with over 8 years of experience
-working with photographers worldwide.
-</p>
-<p>
-I specialize in high-end beauty and portrait retouching while preserving
-natural skin texture and depth.
-</p>
-<p>
-No AI smoothing. No artificial blur. Every image is manually refined
-using professional dodge & burn techniques.
-</p>
+Manually crafted with 8+ years of experience.</p>
+<a href="#contact" class="btn">Try 1 Photo Free</a>
 </div>
 </section>
 
 <!-- PORTFOLIO -->
-<section id="portfolio">
-<div class="container center">
+<section id="portfolio" class="center fade">
+<div class="container">
 <h2>Selected Work</h2>
-<p>Real Skin. Real Detail. Professional Finish.</p>
 
-<div class="grid grid-3">
-<img src="before-after1.jpg" width="100%">
-<img src="before-after2.jpg" width="100%">
-<img src="before-after3.jpg" width="100%">
+<div class="slider">
+<img src="before1.jpg">
+<div class="after"><img src="after1.jpg"></div>
+<div class="handle"></div>
 </div>
+
+<div class="slider">
+<img src="before2.jpg">
+<div class="after"><img src="after2.jpg"></div>
+<div class="handle"></div>
+</div>
+
 </div>
 </section>
 
 <!-- SERVICES -->
-<section>
+<section id="services" class="fade">
 <div class="container center">
 <h2>Services & Investment</h2>
-
 <div class="grid grid-3">
 
 <div>
 <h3>Basic — $5</h3>
-<p>
-• Skin cleanup<br>
-• Minor blemish removal<br>
-• Basic color correction<br>
-• 24–48h delivery
-</p>
+<p>Skin cleanup<br>Minor blemish removal<br>Basic color correction</p>
 </div>
 
 <div>
 <h3>Professional — $10</h3>
-<p>
-• Advanced dodge & burn<br>
-• Detailed skin refinement<br>
-• Hair cleanup<br>
-• Professional color grading
-</p>
+<p>Advanced dodge & burn<br>Hair cleanup<br>Professional grading</p>
 </div>
 
 <div>
 <h3>High-End — $20+</h3>
-<p>
-• Full manual dodge & burn<br>
-• Texture preservation<br>
-• Advanced grading<br>
-• Magazine-quality finish
-</p>
+<p>Full manual retouch<br>Texture preservation<br>Commercial finish</p>
 </div>
 
 </div>
 </div>
 </section>
 
-<!-- WORKFLOW -->
-<section>
-<div class="container center">
-<h2>Simple & Professional Workflow</h2>
-<p>
-1. Send RAW files via Google Drive or WeTransfer.<br>
-2. Receive preview or quote.<br>
-3. Confirm & pay via PayPal.<br>
-4. Receive high-resolution final images.
-</p>
+<!-- TESTIMONIAL -->
+<section class="center fade">
+<div class="container">
+<h2>What Photographers Say</h2>
+<p>"Clean skin, natural texture, fast delivery. Highly recommended."</p>
+<p>— Beauty Photographer, USA</p>
+</div>
+</section>
 
-<p>Standard delivery: 24–48 hours.<br>
-Rush delivery available upon request.</p>
+<!-- FAQ -->
+<section class="fade">
+<div class="container center">
+<h2>FAQ</h2>
+<p><strong>Do you use AI?</strong><br>No. All retouching is done manually.</p>
+<p><strong>Turnaround time?</strong><br>24–48 hours standard delivery.</p>
+<p><strong>Revisions?</strong><br>Minor revisions included.</p>
 </div>
 </section>
 
 <!-- CTA -->
-<section class="dark center">
+<section id="contact" class="dark center fade">
 <div class="container">
 <h2>Let’s Elevate Your Next Shoot.</h2>
-<p>Send one image for a free test retouch. No watermark. No obligation.</p>
+<p>Send one image for a free test retouch.</p>
 <a href="mailto:your@email.com" class="btn">Send Me a Photo</a>
 </div>
 </section>
@@ -209,6 +239,34 @@ Rush delivery available upon request.</p>
 <footer>
 © 2026 JH Retouch. All rights reserved.
 </footer>
+
+<script>
+// Fade in
+const faders=document.querySelectorAll('.fade');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.2});
+faders.forEach(el=>observer.observe(el));
+
+// Slider logic
+document.querySelectorAll('.slider').forEach(slider=>{
+  const after=slider.querySelector('.after');
+  const handle=slider.querySelector('.handle');
+  slider.addEventListener('mousemove',e=>{
+    const rect=slider.getBoundingClientRect();
+    let x=e.clientX-rect.left;
+    if(x<0)x=0;
+    if(x>rect.width)x=rect.width;
+    after.style.width=x+"px";
+    handle.style.left=x+"px";
+  });
+});
+</script>
 
 </body>
 </html>
