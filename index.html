@@ -1,571 +1,223 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SJ Photo | Professional Retouching</title>
-  <meta name="description" content="Professional photo retouching for newborn, portrait, maternity, model and high-end edits. Fast turnaround and consistent style." />
-  <meta name="theme-color" content="#0f0f0f" />
-
-  <meta property="og:title" content="SJ Photo | Professional Retouching" />
-  <meta property="og:description" content="High-end natural retouching service with fast turnaround." />
-  <meta property="og:type" content="website" />
-
+  <title>SJ Photo | Home</title>
+  <meta name="description" content="SJ Photo home page with services, features and reviews." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <style>
-    :root{
-      --gold:#ffd700;
-      --gold-dark:#b8860b;
-      --bg:#0f0f0f;
-      --white:#fff;
-    }
-
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-    html{scroll-behavior:smooth;}
-    img{max-width:100%;display:block;}
-
-    body{
-      color:var(--white);
-      background:url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1920') no-repeat center center/cover;
-      background-attachment:fixed;
-    }
-
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,0.85);
-      backdrop-filter:blur(8px);
-      z-index:-1;
-    }
-
-    section{
-      padding:110px 8%;
-      content-visibility:auto;
-      contain-intrinsic-size:1px 800px;
-    }
-
-    h2{
-      text-align:center;
-      font-size:40px;
-      color:var(--gold);
-      margin-bottom:60px;
-      position:relative;
-    }
-
-    h2::after{
-      content:"";
-      width:80px;
-      height:3px;
-      background:var(--gold);
-      display:block;
-      margin:15px auto 0;
-    }
-
-    header{
-      position:fixed;
-      top:0;
-      width:100%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:25px 8%;
-      background:rgba(0,0,0,0.95);
-      z-index:1000;
-    }
-
-    .logo{height:80px;cursor:pointer;}
-
-    nav a{
-      color:var(--white);
-      margin-left:35px;
-      text-decoration:none;
-      font-weight:500;
-      transition:.3s;
-    }
-
-    nav a:hover{color:var(--gold);}
-
-    .hero{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:60px;
-      padding-top:170px;
-      min-height:95vh;
-    }
-
-    .hero-text{flex:1;}
-    .hero-text h1{font-size:52px;color:var(--gold);margin-bottom:20px;}
-    .hero-text p{font-size:20px;margin-bottom:30px;opacity:.9;}
-
-    .btn{
-      display:inline-block;
-      padding:16px 35px;
-      background:linear-gradient(45deg,var(--gold),var(--gold-dark));
-      color:#000;
-      border-radius:30px;
-      font-weight:600;
-      text-decoration:none;
-      transition:.3s;
-    }
-
-    .btn:hover{transform:scale(1.05);}
-
-    .slider{
-      flex:1;
-      max-width:1060px;
-      aspect-ratio:8/5;
-      overflow:hidden;
-      border-radius:25px;
-      position:relative;
-      box-shadow:0 0 60px rgba(255,215,0,.6);
-    }
-
-    .slides{
-      display:flex;
-      height:100%;
-      transition:transform .8s cubic-bezier(.77,0,.18,1);
-      will-change:transform;
-    }
-
-    .slides img{
-      flex:0 0 100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .slider-btn{
-      position:absolute;
-      top:50%;
-      transform:translateY(-50%);
-      background:rgba(0,0,0,.6);
-      border:none;
-      color:var(--gold);
-      font-size:22px;
-      padding:10px 14px;
-      cursor:pointer;
-      border-radius:50%;
-    }
-
-    .prev{left:15px;}
-    .next{right:15px;}
-
-    .dots{
-      position:absolute;
-      bottom:15px;
-      left:50%;
-      transform:translateX(-50%);
-      display:flex;
-      gap:8px;
-    }
-
-    .dot{
-      width:10px;
-      height:10px;
-      border-radius:50%;
-      border:none;
-      background:#fff;
-      opacity:.5;
-      cursor:pointer;
-      padding:0;
-    }
-
-    .dot.active{background:var(--gold);opacity:1;}
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:40px;
-    }
-
-    .card{
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,215,0,.4);
-      border-radius:25px;
-      overflow:hidden;
-      transition:.3s;
-      backdrop-filter:blur(10px);
-    }
-
-    .card:hover{
-      transform:translateY(-10px);
-      box-shadow:0 0 35px rgba(255,215,0,.4);
-    }
-
-    .card img{
-      width:100%;
-      aspect-ratio:4/5;
-      object-fit:cover;
-    }
-
-    .card-content{padding:25px;}
-    .card h3{color:var(--gold);margin-bottom:8px;}
-    .price{font-size:20px;margin-bottom:15px;}
-    .card ul{list-style:none;font-size:14px;margin-bottom:20px;}
-    .card ul li{margin-bottom:6px;}
-
-    .feedback{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:30px;
-    }
-
-    .feedback-item{
-      background:rgba(255,255,255,.05);
-      padding:25px;
-      border-radius:20px;
-    }
-
-    .faq-item{
-      background:rgba(255,255,255,.05);
-      padding:20px;
-      margin-bottom:20px;
-      border-radius:15px;
-    }
-
-    form{
-      max-width:600px;
-      margin:auto;
-      display:flex;
-      flex-direction:column;
-      gap:15px;
-    }
-
-    form input, form select, form textarea{
-      padding:12px;
-      border-radius:10px;
-      border:none;
-    }
-
-    form button{
-      padding:14px;
-      border:none;
-      border-radius:30px;
-      background:linear-gradient(45deg,var(--gold),var(--gold-dark));
-      font-weight:600;
-      cursor:pointer;
-    }
-
-    .float-insta, .float-quote{
-      position:fixed;
-      right:20px;
-      padding:15px;
-      border-radius:50%;
-      color:#fff;
-      font-size:20px;
-      z-index:1000;
-    }
-
-    .float-insta{bottom:90px;background:#E1306C;}
-    .float-quote{bottom:20px;background:var(--gold);color:#000;}
-
-    footer{
-      background:rgba(0,0,0,.95);
-      padding:80px 8%;
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:50px;
-    }
-
-    .footer-left img{width:140px;margin-bottom:20px;}
-    .footer-left p{max-width:400px;line-height:1.6;opacity:.85;}
-    .footer-right h4{color:var(--gold);margin-bottom:15px;}
-    .footer-right p{margin-bottom:10px;}
-
-    @media (max-width:1100px){
-      .hero{flex-direction:column;text-align:center;}
-      .grid{grid-template-columns:1fr;}
-      .feedback{grid-template-columns:1fr;}
-    }
-
-    @media (max-width:768px){
-      body{background-attachment:scroll;}
-      .hero-text h1{font-size:36px;}
-      .hero-text p{font-size:17px;}
-      nav a{margin-left:16px;}
-    }
-
-    @media (prefers-reduced-motion:reduce){
-      *{
-        animation:none !important;
-        transition:none !important;
-        scroll-behavior:auto !important;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <header>
-    <img
-      src="https://github.com/sjretouch/sjretouch/blob/main/2.png?raw=true"
-      class="logo"
-      alt="SJ Photo Logo"
-      width="140"
-      height="80"
-      decoding="async"
-      onclick="window.scrollTo({top:0,behavior:'smooth'})"
-    />
-    <nav aria-label="Main navigation">
-      <a href="#">Home</a>
-      <a href="#services">Services</a>
-      <a href="https://www.instagram.com/sj.retoucher/" target="_blank" rel="noopener noreferrer">Gallery</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact Us</a>
+<header class="main-header">
+  <div class="header-shell">
+    <a class="logo" href="index.html"><img src="https://github.com/sjretouch/sjretouch/blob/main/2.png?raw=true" alt="SJ Photo" /></a>
+
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="nav-menu" class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="contact.html">Contact me</a>
     </nav>
-  </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Welcome to SJphoto</h1>
-      <p>We are the best choice to help you increase the attraction to your product.</p>
-      <a href="#contact" class="btn">Try Free Now</a>
+    <form id="site-search-form" class="search-form" role="search">
+      <input id="site-search-input" type="search" list="search-options" placeholder="Search pages or services" aria-label="Search" />
+      <button type="submit">Go</button>
+      <datalist id="search-options">
+        <option value="Home"></option>
+        <option value="Services"></option>
+        <option value="Gallery"></option>
+        <option value="FAQs"></option>
+        <option value="Contact me"></option>
+        <option value="Newborn"></option>
+        <option value="Basic"></option>
+        <option value="Model"></option>
+        <option value="Maternity"></option>
+        <option value="High-end"></option>
+        <option value="Other"></option>
+      </datalist>
+      <span class="search-message" id="search-message">No direct match found.</span>
+    </form>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-copy">
+      <span class="eyebrow">Welcome to SJ Photo</span>
+      <h1>Premium retouching service for modern photographers.</h1>
+      <p>We help photographers deliver natural skin detail, balanced light, and consistent quality across every shoot. From newborn to high-end beauty sets, every frame is retouched by hand with style consistency.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="contact.html">Try Free Now</a>
+        <a class="btn btn-ghost" href="gallery.html">Open Gallery</a>
+      </div>
     </div>
 
-    <div class="slider" id="slider" aria-label="Portfolio slider">
-      <div class="slides" id="slides">
-        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=1400" alt="Retouched portrait sample 1" width="1400" height="875" fetchpriority="high" decoding="async" />
-        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1400" alt="Retouched portrait sample 2" width="1400" height="875" loading="lazy" decoding="async" />
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1400" alt="Retouched portrait sample 3" width="1400" height="875" loading="lazy" decoding="async" />
-        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=1400" alt="Retouched portrait sample 4" width="1400" height="875" loading="lazy" decoding="async" />
-        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1400" alt="Retouched portrait sample 5" width="1400" height="875" loading="lazy" decoding="async" />
+    <div class="hero-slider" data-hero-slider>
+      <div class="hero-track">
+        <figure class="hero-slide">
+          <img src="https://github.com/sjretouch/sjretouch/blob/main/BA.jpg?raw=true" alt="Before and after retouching showcase" />
+          <figcaption>Clean skin texture with natural detail retention.</figcaption>
+        </figure>
+        <figure class="hero-slide">
+          <img src="https://github.com/sjretouch/sjretouch/blob/main/BA%202.jpg?raw=true" alt="Portrait retouching result" />
+          <figcaption>Balanced tones for portrait and studio sessions.</figcaption>
+        </figure>
+        <figure class="hero-slide">
+          <img src="https://github.com/sjretouch/sjretouch/blob/main/BA%205.jpg?raw=true" alt="Maternity retouching sample" />
+          <figcaption>Soft highlights and polished maternity look.</figcaption>
+        </figure>
+        <figure class="hero-slide">
+          <img src="https://github.com/sjretouch/sjretouch/blob/main/BA%208.jpg?raw=true" alt="High-end retouching sample" />
+          <figcaption>Editorial-grade finish for commercial quality.</figcaption>
+        </figure>
       </div>
-      <button class="slider-btn prev" type="button" aria-label="Previous slide" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
-      <button class="slider-btn next" type="button" aria-label="Next slide" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
-      <div class="dots" id="dots" aria-label="Slide dots"></div>
-    </div>
-  </section>
-
-  <section id="services">
-    <h2>Services</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800" alt="Newborn and basic retouching" width="800" height="1000" loading="lazy" decoding="async" />
-        <div class="card-content">
-          <h3>Newborn & Basic</h3>
-          <div class="price">$2 / image</div>
-          <ul>
-            <li>Background Removal</li>
-            <li>Eyes and face retouching</li>
-            <li>Skin smoothing & blemish removal</li>
-            <li>Lighting & brightness adjustment</li>
-            <li>Match your retouching style</li>
-          </ul>
-          <a href="#contact" class="btn">Get Quote</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800" alt="Portrait retouching" width="800" height="1000" loading="lazy" decoding="async" />
-        <div class="card-content">
-          <h3>Portrait</h3>
-          <div class="price">$4 / image</div>
-          <ul>
-            <li>Skin retouching</li>
-            <li>Body liquefy</li>
-            <li>Hair retouching</li>
-            <li>Objects removal</li>
-            <li>Following Clients’ Style</li>
-          </ul>
-          <a href="#contact" class="btn">Get Quote</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=800" alt="Maternity retouching" width="800" height="1000" loading="lazy" decoding="async" />
-        <div class="card-content">
-          <h3>Maternity</h3>
-          <div class="price">$4 / image</div>
-          <ul>
-            <li>Face beauty retouch</li>
-            <li>Skin tone smoothing</li>
-            <li>Teeth whitening</li>
-            <li>Wrinkle removal</li>
-            <li>Hair retouching</li>
-          </ul>
-          <a href="#contact" class="btn">Get Quote</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=800" alt="Model retouching" width="800" height="1000" loading="lazy" decoding="async" />
-        <div class="card-content">
-          <h3>Model</h3>
-          <div class="price">$4 / image</div>
-          <ul>
-            <li>Skin softening</li>
-            <li>Body slimming</li>
-            <li>Color correction</li>
-            <li>Background retouching</li>
-            <li>Sharpness enhancement</li>
-          </ul>
-          <a href="#contact" class="btn">Get Quote</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800" alt="High-end retouching" width="800" height="1000" loading="lazy" decoding="async" />
-        <div class="card-content">
-          <h3>High-End</h3>
-          <div class="price">$7 / image</div>
-          <ul>
-            <li>Dodge & Burn</li>
-            <li>Digital airbrushing</li>
-            <li>Digital makeup</li>
-            <li>Light & exposure levels</li>
-            <li>Blemishes removal</li>
-          </ul>
-          <a href="#contact" class="btn">Get Quote</a>
-        </div>
-      </div>
+      <button class="slider-control prev" type="button" aria-label="Previous slide">&#10094;</button>
+      <button class="slider-control next" type="button" aria-label="Next slide">&#10095;</button>
+      <div class="slider-dots"></div>
     </div>
   </section>
 
   <section>
-    <h2>Client Feedback</h2>
-    <div class="feedback">
-      <div class="feedback-item">🇺🇸 Sarah M. – “Outstanding quality and natural finish!”</div>
-      <div class="feedback-item">🇺🇸 David R. – “Fast turnaround and consistent results.”</div>
-      <div class="feedback-item">🇺🇸 Jessica L. – “My trusted retoucher for all sessions.”</div>
+    <div class="section-heading">
+      <h2>Our Features</h2>
+      <p>A visual style inspired by bazaphoto, customized with SJ Photo workflow and quality standards.</p>
+    </div>
+
+    <div class="features-grid">
+      <article class="feature-card">
+        <div class="icon">01</div>
+        <h3>Natural Finish</h3>
+        <p>We preserve texture and avoid over-smoothing so photos still feel real and premium.</p>
+      </article>
+      <article class="feature-card">
+        <div class="icon">02</div>
+        <h3>Fast Delivery</h3>
+        <p>Standard projects are delivered in 24-48 hours with clear milestones and reliable turnaround.</p>
+      </article>
+      <article class="feature-card">
+        <div class="icon">03</div>
+        <h3>Style Matching</h3>
+        <p>We follow your references and preset taste to keep your entire portfolio visually consistent.</p>
+      </article>
+      <article class="feature-card">
+        <div class="icon">04</div>
+        <h3>Global Support</h3>
+        <p>Photographers from multiple markets trust SJ Photo for stable quality and communication.</p>
+      </article>
     </div>
   </section>
 
-  <section id="faq">
-    <h2>FAQs</h2>
-    <div class="faq-item"><strong>Delivery time?</strong><br />24–48 hours depending on volume.</div>
-    <div class="faq-item"><strong>Bulk discount?</strong><br />Yes, contact for custom pricing.</div>
-    <div class="faq-item"><strong>Match my style?</strong><br />Absolutely.</div>
-    <div class="faq-item"><strong>International clients?</strong><br />Yes, worldwide.</div>
-    <div class="faq-item"><strong>Revisions?</strong><br />Minor revisions included.</div>
-    <div class="faq-item"><strong>Payment methods?</strong><br />PayPal & bank transfer.</div>
+  <section>
+    <div class="section-heading">
+      <h2>Services</h2>
+      <p>Six core categories. Maximum 3 cards visible at once on large screens. Use the horizontal slider to view more.</p>
+    </div>
+
+    <div class="services-carousel-wrap">
+      <button class="carousel-btn prev" type="button" data-services-prev aria-label="Scroll services left">&#10094;</button>
+      <div class="services-carousel" data-service-carousel>
+        <a class="service-tile" href="service-newborn.html">
+          <img src="https://github.com/sjretouch/sjretouch/blob/main/Newborn.jpg?raw=true" alt="Newborn service" />
+          <div class="body">
+            <h3>Newborn</h3>
+            <p>Gentle skin cleanup, blanket and background cleanup for baby sessions.</p>
+            <span>View details</span>
+          </div>
+        </a>
+        <a class="service-tile" href="service-basic.html">
+          <img src="https://github.com/sjretouch/sjretouch/blob/main/BA%203.jpg?raw=true" alt="Basic service" />
+          <div class="body">
+            <h3>Basic</h3>
+            <p>Quick balance for exposure, skin tone, and distracting object removal.</p>
+            <span>View details</span>
+          </div>
+        </a>
+        <a class="service-tile" href="service-model.html">
+          <img src="https://github.com/sjretouch/sjretouch/blob/main/model.jpg?raw=true" alt="Model service" />
+          <div class="body">
+            <h3>Model</h3>
+            <p>Fashion-focused skin work, body shaping, and color harmony adjustments.</p>
+            <span>View details</span>
+          </div>
+        </a>
+        <a class="service-tile" href="service-maternity.html">
+          <img src="https://github.com/sjretouch/sjretouch/blob/main/Bau.jpg?raw=true" alt="Maternity service" />
+          <div class="body">
+            <h3>Maternity</h3>
+            <p>Soft beauty retouch and elegant skin tone rendering for maternity portraits.</p>
+            <span>View details</span>
+          </div>
+        </a>
+        <a class="service-tile" href="service-high-end.html">
+          <img src="https://github.com/sjretouch/sjretouch/blob/main/high%20end.jpg?raw=true" alt="High-end service" />
+          <div class="body">
+            <h3>High-end</h3>
+            <p>Dodge & burn, beauty cleanup, and editorial finishing for top-quality output.</p>
+            <span>View details</span>
+          </div>
+        </a>
+        <a class="service-tile" href="service-other.html">
+          <img src="https://github.com/sjretouch/sjretouch/blob/main/portrait.jpg?raw=true" alt="Other service" />
+          <div class="body">
+            <h3>Other</h3>
+            <p>Custom retouch projects for events, product campaigns, and unique requests.</p>
+            <span>View details</span>
+          </div>
+        </a>
+      </div>
+      <button class="carousel-btn next" type="button" data-services-next aria-label="Scroll services right">&#10095;</button>
+    </div>
   </section>
 
-  <section id="contact">
-    <h2>Send Your Images & Get a Quote</h2>
-    <p style="text-align:center;margin-bottom:25px;">
-      Tell me about your project and how many images you have. I’ll reply with a clear quote and turnaround time.<br />
-      Working hours: usually reply within a few working hours.
-    </p>
+  <section>
+    <div class="section-heading">
+      <h2>Client Reviews</h2>
+      <p>Sample feedback from photographers working with SJ Photo.</p>
+    </div>
 
-    <form action="https://formspree.io/f/xbdagqon" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email / Contact" required />
-      <select name="photo_type" required>
-        <option value="" selected disabled>Select Photo Type</option>
-        <option>Newborn</option>
-        <option>Portrait</option>
-        <option>Maternity</option>
-        <option>Model</option>
-        <option>High-End</option>
-      </select>
-      <input type="text" name="image_link" placeholder="Image Link (Drive, Dropbox...)" />
-      <textarea name="details" rows="5" placeholder="Project Details"></textarea>
-      <button type="submit">Send Request</button>
-    </form>
+    <div class="testimonial-grid">
+      <article class="testimonial">
+        <p>"The skin work is very natural and consistent across the full wedding set. My clients loved it."</p>
+        <h3>Emily R.</h3>
+        <span>Wedding Photographer, US</span>
+      </article>
+      <article class="testimonial">
+        <p>"Turnaround was fast and communication was clear. SJ matched my style guide perfectly."</p>
+        <h3>Daniel K.</h3>
+        <span>Portrait Studio, UK</span>
+      </article>
+      <article class="testimonial">
+        <p>"For high-end beauty projects, their dodge and burn workflow is clean and production-ready."</p>
+        <h3>Aiko T.</h3>
+        <span>Commercial Team, JP</span>
+      </article>
+    </div>
   </section>
+</main>
 
-  <a href="https://www.instagram.com/sj.retoucher/" target="_blank" rel="noopener noreferrer" class="float-insta" aria-label="Open Instagram">
-    <i class="fab fa-instagram"></i>
-  </a>
-  <a href="#contact" class="float-quote" aria-label="Go to contact form">
-    <i class="fas fa-paper-plane"></i>
-  </a>
-
-  <footer>
+<footer class="footer">
+  <div class="footer-container">
     <div class="footer-left">
-      <img
-        src="https://github.com/sjretouch/sjretouch/blob/main/2.png?raw=true"
-        alt="SJ Photo Logo"
-        width="140"
-        height="80"
-        loading="lazy"
-        decoding="async"
-      />
-      <p>Professional retouching service helping photographers elevate their work with natural, high-end results.</p>
+      <img src="https://github.com/sjretouch/sjretouch/blob/main/2.png?raw=true" class="footer-logo" alt="SJ logo" />
+      <p class="footer-about">SJ Photo is a high-end professional retouching studio serving photographers worldwide with precision and natural results.</p>
     </div>
-
+    <div class="footer-divider"></div>
     <div class="footer-right">
-      <h4>Contact</h4>
-      <p><i class="fas fa-envelope"></i> sj.retoucher@gmail.com</p>
-      <p><i class="fab fa-instagram"></i> @sj.retoucher</p>
+      <p>sj.retoucher@gmail.com</p>
+      <p>@sj.retoucher</p>
+      <p>We usually reply within 1 hour during working time.</p>
     </div>
-  </footer>
-
-  <script>
-    const slider = document.getElementById("slider");
-    const slides = document.getElementById("slides");
-    const dotsContainer = document.getElementById("dots");
-    const total = slides.children.length;
-    let index = 0;
-    let intervalId = null;
-    const AUTOPLAY_MS = 4000;
-
-    function updateSlider() {
-      slides.style.transform = `translateX(-${index * 100}%)`;
-      dotsContainer.querySelectorAll(".dot").forEach((dot, i) => {
-        dot.classList.toggle("active", i === index);
-      });
-    }
-
-    function nextSlide() {
-      index = (index + 1) % total;
-      updateSlider();
-    }
-
-    function prevSlide() {
-      index = (index - 1 + total) % total;
-      updateSlider();
-    }
-
-    function createDots() {
-      const frag = document.createDocumentFragment();
-      for (let i = 0; i < total; i++) {
-        const dot = document.createElement("button");
-        dot.type = "button";
-        dot.className = "dot" + (i === 0 ? " active" : "");
-        dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
-        dot.addEventListener("click", () => {
-          index = i;
-          updateSlider();
-          restartAuto();
-        });
-        frag.appendChild(dot);
-      }
-      dotsContainer.appendChild(frag);
-    }
-
-    function startAuto() {
-      if (intervalId) return;
-      intervalId = setInterval(nextSlide, AUTOPLAY_MS);
-    }
-
-    function stopAuto() {
-      clearInterval(intervalId);
-      intervalId = null;
-    }
-
-    function restartAuto() {
-      stopAuto();
-      startAuto();
-    }
-
-    slider.addEventListener("mouseenter", stopAuto);
-    slider.addEventListener("mouseleave", startAuto);
-
-    document.addEventListener("visibilitychange", () => {
-      if (document.hidden) stopAuto();
-      else startAuto();
-    });
-
-    createDots();
-    startAuto();
-  </script>
+  </div>
+  <div class="footer-bottom">&copy; 2026 SJ Photo. All rights reserved.</div>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
